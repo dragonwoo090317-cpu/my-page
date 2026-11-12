@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모맨재의 우주 공간 🌌</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (Noto Sans KR & Orbitron) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #080711;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* 별 배경 캔버스 */
+    #starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* 카드 뒤집기 애니메이션 스타일 */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+
+    .flipper {
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .flipper.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1.25rem;
+    }
+
+    .front {
+      z-index: 2;
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    /* 글로우 효과 및 그라데이션 테두리 */
+    .neon-glow {
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.4), inset 0 0 15px rgba(168, 85, 247, 0.2);
+    }
+
+    .neon-glow:hover {
+      box-shadow: 0 0 35px rgba(236, 72, 153, 0.6), inset 0 0 20px rgba(236, 72, 153, 0.3);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* 파티클 효과용 컨테이너 */
+    #particles-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* 커스텀 애니메이션 */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; filter: blur(20px); }
+      50% { opacity: 0.9; filter: blur(30px); }
+    }
+
+    .glow-bg {
+      animation: pulseGlow 6s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen relative flex flex-col items-center justify-start pb-16 px-4">
+
+  <!-- 별 배경 캔버스 -->
+  <canvas id="starfield"></canvas>
+
+  <!-- 파티클 효과 레이어 (퀴즈용) -->
+  <div id="particles-container"></div>
+
+  <!-- 은은한 우주 빛 배경 요소 -->
+  <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-tr from-purple-900/40 to-pink-600/30 rounded-full glow-bg pointer-events-none z-0"></div>
+
+  <!-- 메인 컨테이너 -->
+  <main class="relative z-10 w-full max-w-4xl flex flex-col items-center gap-12 mt-8 md:mt-16">
+
+    <!-- 헤더 섹션 -->
+    <header class="text-center space-y-4 animate-float">
+      <div class="inline-block px-4 py-1.5 rounded-full border border-purple-500/40 bg-purple-950/40 backdrop-blur-md text-purple-300 text-xs md:text-sm font-semibold tracking-widest uppercase mb-2">
+        Welcome to My Universe
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-400 to-indigo-300 font-orbitron">
+        모맨재
+      </h1>
+      <p class="text-gray-300 text-base md:text-lg max-w-md mx-auto font-light leading-relaxed">
+        별빛 사이를 자유롭게 유영하는 신비로운 탐험가 ✨<br>
+        저에 대해 더 알고 싶다면 아래 카드와 퀴즈를 확인해 보세요!
+      </p>
+    </header>
+
+    <!-- 섹션 1: 좋아하는 것 3가지 (카드 뒤집기) -->
+    <section class="w-full space-y-6">
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-pink-200">
+          💖 내가 좋아하는 3가지
+        </h2>
+        <p class="text-xs md:text-sm text-gray-400 mt-1">카드를 클릭하여 뒤집으면 비밀 이유가 공개됩니다!</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <!-- 카드 1: 버츄버 -->
+        <div class="perspective-1000 h-64 cursor-pointer group" onclick="flipCard(this)">
+          <div class="flipper h-full w-full">
+            <!-- 앞면 -->
+            <div class="front glass-card neon-glow flex flex-col items-center justify-center p-6 text-center border border-purple-500/30 hover:border-purple-400 transition-all">
+              <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">🤖</div>
+              <h3 class="text-2xl font-bold text-purple-200">버츄버</h3>
+              <span class="mt-4 text-xs text-pink-300 border border-pink-500/30 px-3 py-1 rounded-full bg-pink-950/30">클릭해서 이유 보기 👇</span>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back glass-card bg-gradient-to-br from-purple-950/90 to-indigo-950/90 flex flex-col items-center justify-center p-6 text-center border border-pink-500/50 shadow-2xl">
+              <h4 class="text-lg font-bold text-pink-300 mb-2">좋아하는 이유</h4>
+              <p class="text-sm text-gray-200 leading-relaxed">
+                "모니터 밖으로 나오지 않아서 날 절대로 배신하지 않음! 2D 화면 안에서 영원히 빛나는 나만의 우주 최강 아이돌!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 카드 2: 보컬로이드 -->
+        <div class="perspective-1000 h-64 cursor-pointer group" onclick="flipCard(this)">
+          <div class="flipper h-full w-full">
+            <!-- 앞면 -->
+            <div class="front glass-card neon-glow flex flex-col items-center justify-center p-6 text-center border border-purple-500/30 hover:border-purple-400 transition-all">
+              <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">🎵</div>
+              <h3 class="text-2xl font-bold text-cyan-200">보컬로이드</h3>
+              <span class="mt-4 text-xs text-cyan-300 border border-cyan-500/30 px-3 py-1 rounded-full bg-cyan-950/30">클릭해서 이유 보기 👇</span>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back glass-card bg-gradient-to-br from-indigo-950/90 to-cyan-950/90 flex flex-col items-center justify-center p-6 text-center border border-cyan-500/50 shadow-2xl">
+              <h4 class="text-lg font-bold text-cyan-300 mb-2">좋아하는 이유</h4>
+              <p class="text-sm text-gray-200 leading-relaxed">
+                "목이 쉴 걱정 없이 초당 1000마디 폭풍 랩 가능! 기계음 특유의 찌릿찌릿함이 내 우주 감성을 완벽 자극함!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 카드 3: 여자 -->
+        <div class="perspective-1000 h-64 cursor-pointer group sm:col-span-2 md:col-span-1" onclick="flipCard(this)">
+          <div class="flipper h-full w-full">
+            <!-- 앞면 -->
+            <div class="front glass-card neon-glow flex flex-col items-center justify-center p-6 text-center border border-purple-500/30 hover:border-purple-400 transition-all">
+              <div class="text-5xl mb-4 transform group-hover:scale-110 transition-transform">💃</div>
+              <h3 class="text-2xl font-bold text-rose-200">여자</h3>
+              <span class="mt-4 text-xs text-rose-300 border border-rose-500/30 px-3 py-1 rounded-full bg-rose-950/30">클릭해서 이유 보기 👇</span>
+            </div>
+            <!-- 뒷면 -->
+            <div class="back glass-card bg-gradient-to-br from-pink-950/90 to-rose-950/90 flex flex-col items-center justify-center p-6 text-center border border-rose-500/50 shadow-2xl">
+              <h4 class="text-lg font-bold text-rose-300 mb-2">좋아하는 이유</h4>
+              <p class="text-sm text-gray-200 leading-relaxed">
+                "설명이 필요한가요? 이 우주에서 가장 찬란하게 빛나는 아름다움 그 자체이자 본능 그 자체!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 섹션 2: OX 퀴즈 -->
+    <section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-purple-500/30 space-y-6 text-center relative overflow-hidden">
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-widest text-indigo-400 font-semibold">Mini Quiz</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">모맨재에 관한 OX 퀴즈!</h2>
+      </div>
+
+      <div class="bg-purple-950/50 p-6 rounded-2xl border border-purple-800/40">
+        <p class="text-xl md:text-2xl font-semibold text-purple-200">
+          Q. "난 게이다" 🌈
+        </p>
+      </div>
+
+      <!-- OX 버튼 -->
+      <div class="flex justify-center gap-6">
+        <button onclick="checkAnswer(true)" class="w-32 py-4 bg-emerald-600/80 hover:bg-emerald-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-emerald-500/50 active:scale-95 border border-emerald-400/40">
+          O
+        </button>
+        <button onclick="checkAnswer(false)" class="w-32 py-4 bg-rose-600/80 hover:bg-rose-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-rose-500/50 active:scale-95 border border-rose-400/40">
+          X
+        </button>
+      </div>
+
+      <!-- 결과 메시지 상자 -->
+      <div id="quiz-result" class="hidden p-4 rounded-xl text-lg font-bold transition-all duration-300"></div>
+    </section>
+
+    <!-- 섹션 3: 오늘의 운세 -->
+    <section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-pink-500/30 text-center space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-widest text-pink-400 font-semibold">Space Fortune</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">🔮 모맨재의 오늘의 운세</h2>
+        <p class="text-xs md:text-sm text-gray-300">버튼을 눌러 오늘 당신의 우주 운세를 점쳐보세요!</p>
+      </div>
+
+      <button onclick="drawFortune()" class="px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:to-indigo-400 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-pink-500/50 transition-all active:scale-95 border border-white/20">
+        ✨ 오늘의 운세 뽑기 ✨
+      </button>
+
+      <!-- 운세 결과 표시 공간 -->
+      <div id="fortune-display" class="min-h-[100px] flex items-center justify-center p-6 bg-black/40 rounded-2xl border border-purple-500/20 text-purple-200 text-lg font-medium leading-relaxed">
+        버튼을 눌러 운세를 확인해보세요!
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="text-xs text-gray-500 text-center pt-6">
+      © 모맨재 Universe. All Galactic Rights Reserved. 🚀
+    </footer>
+
+  </main>
+
+  <script>
+    /* ==========================================
+       1. 별빛 배경 애니메이션 (Canvas)
+    ========================================== */
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    let stars = [];
+    const numStars = 150;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initStars();
+    });
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.8,
+          alpha: Math.random(),
+          speed: Math.random() * 0.02 + 0.005,
+          color: ['#ffffff', '#e0e7ff', '#fbcfe8', '#c084fc'][Math.floor(Math.random() * 4)]
+        });
+      }
+    }
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach(star => {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) {
+          star.speed = -star.speed;
+        }
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = star.color;
+        ctx.globalAlpha = Math.abs(star.alpha);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animateStars);
+    }
+
+    resizeCanvas();
+    initStars();
+    animateStars();
+
+    /* ==========================================
+       2. 카드 뒤집기 함수
+    ========================================== */
+    function flipCard(cardElement) {
+      const flipper = cardElement.querySelector('.flipper');
+      flipper.classList.toggle('flipped');
+    }
+
+    /* ==========================================
+       3. OX 퀴즈 결과 및 효과
+    ========================================== */
+    function checkAnswer(userAnswer) {
+      const resultBox = document.getElementById('quiz-result');
+      const correctAnswer = true; // 정답은 O
+
+      resultBox.classList.remove('hidden', 'bg-emerald-950/80', 'text-emerald-200', 'border-emerald-500', 'bg-rose-950/80', 'text-rose-200', 'border-rose-500');
+
+      if (userAnswer === correctAnswer) {
+        // 정답 (O 선택) -> 축하 효과
+        resultBox.classList.add('bg-emerald-950/80', 'text-emerald-200', 'border', 'border-emerald-500');
+        resultBox.innerHTML = "🎉 정답입니다! 취향 존중! 진정한 모맨재 박사이시군요! 🎉";
+        triggerCelebration();
+      } else {
+        // 오답 (X 선택) -> 아쉬운 효과
+        resultBox.classList.add('bg-rose-950/80', 'text-rose-200', 'border', 'border-rose-500');
+        resultBox.innerHTML = "😭 땡! 틀렸습니다! 절 아직 잘 모르시는군요... 아쉽습니다!";
+        triggerDisappointment();
+      }
+    }
+
+    // 축하 효과 (반짝이는 축포 파티클)
+    function triggerCelebration() {
+      const container = document.getElementById('particles-container');
+      const colors = ['#f472b6', '#a855f7', '#38bdf8', '#4ade80', '#fbbf24'];
+
+      for (let i = 0; i < 60; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.left = '50%';
+        particle.style.top = '50%';
+        particle.style.width = Math.random() * 10 + 6 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 300 + 100;
+        const x = Math.cos(angle) * velocity;
+        const y = Math.sin(angle) * velocity;
+
+        container.appendChild(particle);
+
+        particle.animate([
+          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+          { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }
+        ], {
+          duration: Math.random() * 1000 + 800,
+          easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+        }).onfinish = () => particle.remove();
+      }
+    }
+
+    // 아쉬운 효과 (화면 좌우 흔들기)
+    function triggerDisappointment() {
+      const main = document.querySelector('main');
+      main.animate([
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-12px)' },
+        { transform: 'translateX(12px)' },
+        { transform: 'translateX(-8px)' },
+        { transform: 'translateX(8px)' },
+        { transform: 'translateX(0)' }
+      ], {
+        duration: 400,
+        easing: 'ease-in-out'
+      });
+    }
+
+    /* ==========================================
+       4. 오늘의 운세 (11개 메시지)
+    ========================================== */
+    const fortunes = [
+      "🌟 [대길] 오늘은 운명의 덕질 대상을 만나게 될 운세! 입덕 준비를 하세요.",
+      "🪐 [중길] 혜성이 지나가며 뜻밖의 행운을 주고 갑니다. 치킨 먹기 딱 좋은 날!",
+      "🛸 [소길] 외계인이 당신의 존재를 알아챘습니다. 오늘은 유난히 빛나는 하루!",
+      "🌌 [길] 은하수의 기운이 당신을 감싸 안습니다. 하고 싶었던 일을 질러보세요!",
+      "💫 [초대박] 오늘 가챠 뽑기를 하면 SSR이 터질 환상의 기운이 흐릅니다!",
+      "☄️ [주의] 별똥별이 떨어지며 깜빡한 과제/업무를 떠올려줄 수도 있으니 체크 필수!",
+      "🌙 [평온] 달빛이 은은하게 감싸는 날. 맛있는 가공식품과 함께 휴식을 취하세요.",
+      "☀️ [대폭발] 우주 빅뱅 급의 텐션이 솟구칩니다! 오늘 하루는 내가 주인공!",
+      "🔮 [신비] 좋아하는 음악을 들으면 우주 에너지 지수가 +100 상승합니다.",
+      "⭐ [소소] 길을 걷다 귀여운 길냥이를 만나 우주 평화를 느낄 확률 99%!",
+      "🚀 [대박] 당신의 추진력이 광속에 도달합니다! 망설이던 일이 있다면 바로 도전!"
+    ];
+
+    function drawFortune() {
+      const display = document.getElementById('fortune-display');
+      
+      // 뽑는 느낌을 주는 텍스트 전환 효과
+      display.innerHTML = "<span class='animate-pulse text-pink-400'>🔮 우주 궤도를 계산하여 운세를 뽑는 중...</span>";
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * fortunes.length);
+        display.innerHTML = fortunes[randomIndex];
+        display.animate([
+          { transform: 'scale(0.95)', opacity: 0.5 },
+          { transform: 'scale(1)', opacity: 1 }
+        ], {
+          duration: 300,
+          easing: 'ease-out'
+        });
+      }, 400);
+    }
+  </script>
+</body>
+</html>
