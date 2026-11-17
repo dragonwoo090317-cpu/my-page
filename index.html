@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>모맨재의 우주 공간 🌌</title>
@@ -8,8 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts (Noto Sans KR & Orbitron) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;800&amp;family=Orbitron:wght@600;800&amp;display=swap" rel="stylesheet">
   
   <style>
     body {
@@ -110,8 +109,109 @@
       animation: pulseGlow 6s infinite ease-in-out;
     }
   </style>
-</head>
+<style data-studio="css">
+:root{--st-accent:#e2557a}
+.st-nav{position:sticky;top:0;z-index:50;width:100%;box-sizing:border-box;background:#fff;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.08)}
+.st-nav-in{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px 12px;max-width:960px;margin:0 auto}
+.st-nav-a{display:inline-block;padding:8px 14px;border-radius:999px;text-decoration:none;color:#333;font-weight:700;font-size:15px;line-height:1.2}
+.st-nav-a:hover{background:rgba(0,0,0,.06)}
+.st-nav-a.is-on{background:var(--st-accent);color:#fff}
+.st-sec{box-sizing:border-box;width:100%;max-width:960px;margin:24px auto;padding:20px}
+.st-h{font-size:1.6rem;font-weight:800;line-height:1.3;margin:0 0 12px}
+.st-p{font-size:1rem;line-height:1.75;margin:0 0 12px}
+.st-btn{display:inline-block;padding:12px 22px;border-radius:12px;background:var(--st-accent);color:#fff!important;text-decoration:none;font-weight:700;font-size:1rem;line-height:1.2;border:0;cursor:pointer;margin:4px}
+.st-btn:hover{filter:brightness(1.08)}
+.st-img{margin:16px auto;text-align:center}
+.st-img img{display:inline-block;width:100%;max-width:100%;height:auto;border-radius:12px}
+.st-hero{text-align:center;padding:48px 20px;border-radius:20px;background:#f6f6f6;background:color-mix(in srgb,var(--st-accent) 12%,#fff)}
+.st-hero .st-h{font-size:2rem}
+.st-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.st-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);text-align:left}
+.st-ico{font-size:2rem;line-height:1;margin:0 0 8px}
+.st-card .st-h{font-size:1.15rem;margin:0 0 6px}
+.st-card .st-p{margin:0;font-size:.95rem}
+.st-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:center}
+@media(max-width:600px){.st-split{grid-template-columns:1fr}}
+.st-split img{display:block;width:100%;height:auto;border-radius:16px}
+.st-list{margin:0;padding-left:1.3em;line-height:1.9}
+.st-hr{border:0;border-top:2px dashed rgba(0,0,0,.15);margin:28px auto;max-width:960px}
+.st-foot{text-align:center;font-size:.875rem;opacity:.7;padding:24px 12px}
+.st-tab-bar{display:flex;gap:4px;flex-wrap:wrap;border-bottom:2px solid rgba(0,0,0,.08);margin-bottom:14px}
+.st-tab{border:0;background:none;padding:10px 14px;font:inherit;font-weight:700;color:inherit;opacity:.6;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.st-tab.is-on{opacity:1;color:var(--st-accent);border-bottom-color:var(--st-accent)}
+.st-acc{border:1px solid rgba(0,0,0,.1);border-radius:12px;margin:8px 0;background:#fff;overflow:hidden;text-align:left}
+.st-acc summary{cursor:pointer;padding:14px 44px 14px 16px;font-weight:700;list-style:none;position:relative}
+.st-acc summary::-webkit-details-marker{display:none}
+.st-acc summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1.3em;color:var(--st-accent)}
+.st-acc[open] summary::after{content:"\2212"}
+.st-acc>.st-p{padding:0 16px 14px;margin:0}
+.st-pop{margin:12px 0;text-align:center}
+.st-modal{border:0;border-radius:18px;padding:24px;width:min(480px,90vw);box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:left;color:#222}
+.st-modal::backdrop{background:rgba(0,0,0,.45)}
+.st-slider{position:relative}
+.st-slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px}
+.st-slides::-webkit-scrollbar{display:none}
+.st-slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.st-slide img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:16px}
+.st-slide figcaption{text-align:center;padding:8px;font-size:.95rem}
+.st-prev,.st-next{position:absolute;top:calc(50% - 40px);width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 8px rgba(0,0,0,.2);font-size:24px;line-height:1;cursor:pointer;color:#333}
+.st-prev{left:10px}.st-next{right:10px}
+.st-dots{display:flex;justify-content:center;gap:8px;margin-top:4px}
+.st-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(0,0,0,.2);padding:0;cursor:pointer}
+.st-dots button.is-on{background:var(--st-accent)}
+.st-quiz{text-align:center}
+.st-q{font-size:1.25rem;font-weight:800;margin:0 0 14px}
+.st-opts{display:grid;gap:8px;max-width:420px;margin:0 auto}
+.st-opt{padding:12px 16px;border-radius:12px;border:2px solid rgba(0,0,0,.12);background:#fff;font:inherit;font-weight:700;cursor:pointer;color:#222}
+.st-opt.is-ok{border-color:#2f9e5b;background:#e9f7ef}.st-opt.is-no{border-color:#d9475a;background:#fdecee}
+.st-qr{min-height:1.6em;font-weight:700;margin:12px 0 0}
+.st-ci{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;margin:6px 0;background:#fff;cursor:pointer;text-align:left;color:#222}
+.st-ci input{width:20px;height:20px;flex:none;accent-color:var(--st-accent)}
+.st-bar{height:10px;border-radius:99px;background:rgba(0,0,0,.08);overflow:hidden;margin-top:12px}
+.st-bar i{display:block;height:100%;width:0;background:var(--st-accent);transition:width .3s}
+.st-cnt{font-size:.9rem;opacity:.75;margin:6px 0 0}
+.st-dday,.st-timer{text-align:center;border-radius:20px;background:#f6f6f6;background:color-mix(in srgb,var(--st-accent) 10%,#fff)}
+.st-dlabel,.st-tlabel{margin:0;font-weight:700;opacity:.8}
+.st-dnum,.st-tnum{margin:4px 0 8px;font-size:3rem;font-weight:900;color:var(--st-accent);font-variant-numeric:tabular-nums;line-height:1.2}
+.st-tnum.is-done{animation:stblink 1s 3}@keyframes stblink{50%{opacity:.2}}
+.st-embed iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:14px}
+.st-embed[data-kind=map] iframe{aspect-ratio:4/3}
+.st-cols{display:grid;gap:16px}
+.st-c2{grid-template-columns:repeat(2,minmax(0,1fr))}.st-c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:600px){.st-c2,.st-c3{grid-template-columns:1fr}}
+.st-col{min-width:0}
+.st-swipe{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+.st-swipe>*{flex:0 0 min(72%,240px);box-sizing:border-box;scroll-snap-align:start}
+.st-nav-i{margin-right:5px}
+@media(max-width:600px){.st-nav-tab{position:fixed;top:auto;bottom:0;left:0;border-bottom:0;border-top:1px solid rgba(0,0,0,.1);padding-bottom:env(safe-area-inset-bottom)}.st-nav-tab .st-nav-in{flex-wrap:nowrap;justify-content:space-around;gap:0;padding:4px}.st-nav-tab .st-nav-a{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;font-size:12px;border-radius:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.st-nav-tab .st-nav-a.is-on{background:none;color:var(--st-accent)}.st-nav-tab .st-nav-i{margin:0;font-size:22px;line-height:1.1}}
+.st-g-point{--st-g:linear-gradient(135deg,rgba(255,255,255,0),rgba(255,255,255,.45)),linear-gradient(var(--st-accent),var(--st-accent));--st-gi:#fff}.st-g-sunset{--st-g:linear-gradient(135deg,#f43f5e,#f97316);--st-gi:#fff}.st-g-ocean{--st-g:linear-gradient(135deg,#2563eb,#06b6d4);--st-gi:#fff}.st-g-grape{--st-g:linear-gradient(135deg,#7c3aed,#ec4899);--st-gi:#fff}.st-g-forest{--st-g:linear-gradient(135deg,#047857,#34d399);--st-gi:#fff}.st-g-night{--st-g:linear-gradient(135deg,#0f172a,#475569);--st-gi:#fff}.st-g-peach{--st-g:linear-gradient(135deg,#ffe4e6,#fef3c7);--st-gi:#222}.st-g-mint{--st-g:linear-gradient(135deg,#d1fae5,#dbeafe);--st-gi:#222}.st-g-lav{--st-g:linear-gradient(135deg,#ede9fe,#fce7f3);--st-gi:#222}
+html body [class*="st-g-"]{background-image:var(--st-g);color:var(--st-gi)}
+html body .st-gtx{color:transparent;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.st-hv-lift,.st-hv-grow,.st-hv-glow,.st-hv-press{transition:translate .2s,scale .2s,box-shadow .2s}
+@media(hover:hover){.st-hv-lift:hover{translate:0 -6px;box-shadow:0 14px 28px rgba(0,0,0,.18)}.st-hv-grow:hover{scale:1.04}.st-hv-glow:hover{box-shadow:0 8px 24px rgba(0,0,0,.25);box-shadow:0 0 0 3px color-mix(in srgb,var(--st-accent) 35%,transparent),0 8px 24px color-mix(in srgb,var(--st-accent) 45%,transparent)}}
+.st-hv-press:active{scale:.95}
+html.st-js [data-st-in]{opacity:0;transition:opacity .6s ease,transform .6s ease,translate .2s,scale .2s,box-shadow .2s}
+html.st-js [data-st-in="up"]{transform:translateY(26px)}html.st-js [data-st-in="zoom"]{transform:scale(.9)}html.st-js [data-st-in="left"]{transform:translateX(-30px)}
+html.st-js [data-st-in].is-in{opacity:1;transform:none}
+html.st-editing [data-st-in]{opacity:1!important;transform:none!important}
+.st-editing .st-swipe{flex-wrap:wrap;overflow:visible}
+html.st-dark{filter:invert(1) hue-rotate(180deg);background:#fff}
+html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filter:invert(1) hue-rotate(180deg)}
+.st-editing .st-tab-panel{display:block!important;outline:2px dashed rgba(0,0,0,.18);outline-offset:4px;margin:12px 0}
+.st-editing .st-slides{flex-wrap:wrap;gap:10px;overflow:visible}
+.st-editing .st-prev,.st-editing .st-next{display:none}
+.st-editing dialog.st-modal{display:block;position:static;margin:12px auto;outline:2px dashed rgba(0,0,0,.25)}
+.st-editing .st-embed iframe{pointer-events:none}
+</style></head>
 <body class="min-h-screen relative flex flex-col items-center justify-start pb-16 px-4">
+<nav class="st-nav" data-studio="nav">
+  <div class="st-nav-in">
+    <a class="st-nav-a is-on" href="index.html">홈</a>
+    <a class="st-nav-a" href="yungu.html">나를 소개한다</a>
+    <a class="st-nav-a" href="dream.html">나의 꿈</a>
+  </div>
+</nav>
+
 
   <!-- 별 배경 캔버스 -->
   <canvas id="starfield"></canvas>
@@ -211,234 +311,9 @@
     </section>
 
     <!-- 섹션 2: OX 퀴즈 -->
-    <section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-purple-500/30 space-y-6 text-center relative overflow-hidden">
-      <div class="space-y-2">
-        <span class="text-xs uppercase tracking-widest text-indigo-400 font-semibold">Mini Quiz</span>
-        <h2 class="text-2xl md:text-3xl font-bold text-white">모맨재에 관한 OX 퀴즈!</h2>
-      </div>
-
-      <div class="bg-purple-950/50 p-6 rounded-2xl border border-purple-800/40">
-        <p class="text-xl md:text-2xl font-semibold text-purple-200">
-          Q. "난 게이다" 🌈
-        </p>
-      </div>
-
-      <!-- OX 버튼 -->
-      <div class="flex justify-center gap-6">
-        <button onclick="checkAnswer(true)" class="w-32 py-4 bg-emerald-600/80 hover:bg-emerald-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-emerald-500/50 active:scale-95 border border-emerald-400/40">
-          O
-        </button>
-        <button onclick="checkAnswer(false)" class="w-32 py-4 bg-rose-600/80 hover:bg-rose-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-rose-500/50 active:scale-95 border border-rose-400/40">
-          X
-        </button>
-      </div>
-
-      <!-- 결과 메시지 상자 -->
-      <div id="quiz-result" class="hidden p-4 rounded-xl text-lg font-bold transition-all duration-300"></div>
-    </section>
-
-    <!-- 섹션 3: 오늘의 운세 -->
-    <section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-pink-500/30 text-center space-y-6">
-      <div class="space-y-2">
-        <span class="text-xs uppercase tracking-widest text-pink-400 font-semibold">Space Fortune</span>
-        <h2 class="text-2xl md:text-3xl font-bold text-white">🔮 모맨재의 오늘의 운세</h2>
-        <p class="text-xs md:text-sm text-gray-300">버튼을 눌러 오늘 당신의 우주 운세를 점쳐보세요!</p>
-      </div>
-
-      <button onclick="drawFortune()" class="px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:to-indigo-400 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-pink-500/50 transition-all active:scale-95 border border-white/20">
-        ✨ 오늘의 운세 뽑기 ✨
-      </button>
-
-      <!-- 운세 결과 표시 공간 -->
-      <div id="fortune-display" class="min-h-[100px] flex items-center justify-center p-6 bg-black/40 rounded-2xl border border-purple-500/20 text-purple-200 text-lg font-medium leading-relaxed">
-        버튼을 눌러 운세를 확인해보세요!
-      </div>
-    </section>
-
-    <!-- 푸터 -->
-    <footer class="text-xs text-gray-500 text-center pt-6">
-      © 모맨재 Universe. All Galactic Rights Reserved. 🚀
-    </footer>
-
-  </main>
-
-  <script>
-    /* ==========================================
-       1. 별빛 배경 애니메이션 (Canvas)
-    ========================================== */
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-
-    let stars = [];
-    const numStars = 150;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      initStars();
-    });
-
-    function initStars() {
-      stars = [];
-      for (let i = 0; i < numStars; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 1.8,
-          alpha: Math.random(),
-          speed: Math.random() * 0.02 + 0.005,
-          color: ['#ffffff', '#e0e7ff', '#fbcfe8', '#c084fc'][Math.floor(Math.random() * 4)]
-        });
-      }
-    }
-
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      stars.forEach(star => {
-        star.alpha += star.speed;
-        if (star.alpha > 1 || star.alpha < 0) {
-          star.speed = -star.speed;
-        }
-
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = star.color;
-        ctx.globalAlpha = Math.abs(star.alpha);
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animateStars);
-    }
-
-    resizeCanvas();
-    initStars();
-    animateStars();
-
-    /* ==========================================
-       2. 카드 뒤집기 함수
-    ========================================== */
-    function flipCard(cardElement) {
-      const flipper = cardElement.querySelector('.flipper');
-      flipper.classList.toggle('flipped');
-    }
-
-    /* ==========================================
-       3. OX 퀴즈 결과 및 효과
-    ========================================== */
-    function checkAnswer(userAnswer) {
-      const resultBox = document.getElementById('quiz-result');
-      const correctAnswer = true; // 정답은 O
-
-      resultBox.classList.remove('hidden', 'bg-emerald-950/80', 'text-emerald-200', 'border-emerald-500', 'bg-rose-950/80', 'text-rose-200', 'border-rose-500');
-
-      if (userAnswer === correctAnswer) {
-        // 정답 (O 선택) -> 축하 효과
-        resultBox.classList.add('bg-emerald-950/80', 'text-emerald-200', 'border', 'border-emerald-500');
-        resultBox.innerHTML = "🎉 정답입니다! 취향 존중! 진정한 모맨재 박사이시군요! 🎉";
-        triggerCelebration();
-      } else {
-        // 오답 (X 선택) -> 아쉬운 효과
-        resultBox.classList.add('bg-rose-950/80', 'text-rose-200', 'border', 'border-rose-500');
-        resultBox.innerHTML = "😭 땡! 틀렸습니다! 절 아직 잘 모르시는군요... 아쉽습니다!";
-        triggerDisappointment();
-      }
-    }
-
-    // 축하 효과 (반짝이는 축포 파티클)
-    function triggerCelebration() {
-      const container = document.getElementById('particles-container');
-      const colors = ['#f472b6', '#a855f7', '#38bdf8', '#4ade80', '#fbbf24'];
-
-      for (let i = 0; i < 60; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'absolute';
-        particle.style.left = '50%';
-        particle.style.top = '50%';
-        particle.style.width = Math.random() * 10 + 6 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.borderRadius = '50%';
-        particle.style.pointerEvents = 'none';
-
-        const angle = Math.random() * Math.PI * 2;
-        const velocity = Math.random() * 300 + 100;
-        const x = Math.cos(angle) * velocity;
-        const y = Math.sin(angle) * velocity;
-
-        container.appendChild(particle);
-
-        particle.animate([
-          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
-          { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }
-        ], {
-          duration: Math.random() * 1000 + 800,
-          easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
-        }).onfinish = () => particle.remove();
-      }
-    }
-
-    // 아쉬운 효과 (화면 좌우 흔들기)
-    function triggerDisappointment() {
-      const main = document.querySelector('main');
-      main.animate([
-        { transform: 'translateX(0)' },
-        { transform: 'translateX(-12px)' },
-        { transform: 'translateX(12px)' },
-        { transform: 'translateX(-8px)' },
-        { transform: 'translateX(8px)' },
-        { transform: 'translateX(0)' }
-      ], {
-        duration: 400,
-        easing: 'ease-in-out'
-      });
-    }
-
-    /* ==========================================
-       4. 오늘의 운세 (11개 메시지)
-    ========================================== */
-    const fortunes = [
-      "🌟 [대길] 오늘은 운명의 덕질 대상을 만나게 될 운세! 입덕 준비를 하세요.",
-      "🪐 [중길] 혜성이 지나가며 뜻밖의 행운을 주고 갑니다. 치킨 먹기 딱 좋은 날!",
-      "🛸 [소길] 외계인이 당신의 존재를 알아챘습니다. 오늘은 유난히 빛나는 하루!",
-      "🌌 [길] 은하수의 기운이 당신을 감싸 안습니다. 하고 싶었던 일을 질러보세요!",
-      "💫 [초대박] 오늘 가챠 뽑기를 하면 SSR이 터질 환상의 기운이 흐릅니다!",
-      "☄️ [주의] 별똥별이 떨어지며 깜빡한 과제/업무를 떠올려줄 수도 있으니 체크 필수!",
-      "🌙 [평온] 달빛이 은은하게 감싸는 날. 맛있는 가공식품과 함께 휴식을 취하세요.",
-      "☀️ [대폭발] 우주 빅뱅 급의 텐션이 솟구칩니다! 오늘 하루는 내가 주인공!",
-      "🔮 [신비] 좋아하는 음악을 들으면 우주 에너지 지수가 +100 상승합니다.",
-      "⭐ [소소] 길을 걷다 귀여운 길냥이를 만나 우주 평화를 느낄 확률 99%!",
-      "🚀 [대박] 당신의 추진력이 광속에 도달합니다! 망설이던 일이 있다면 바로 도전!"
-    ];
-
-    function drawFortune() {
-      const display = document.getElementById('fortune-display');
-      
-      // 뽑는 느낌을 주는 텍스트 전환 효과
-      display.innerHTML = "<span class='animate-pulse text-pink-400'>🔮 우주 궤도를 계산하여 운세를 뽑는 중...</span>";
-
-      setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * fortunes.length);
-        display.innerHTML = fortunes[randomIndex];
-        display.animate([
-          { transform: 'scale(0.95)', opacity: 0.5 },
-          { transform: 'scale(1)', opacity: 1 }
-        ], {
-          duration: 300,
-          easing: 'ease-out'
-        });
-      }, 400);
-    }
-  </script>
-<!-- ▼ 방명록·OX 투표 (4차시) ▼ -->
-<sb-widget id="sb-web" style="display:block;width:100%;max-width:640px;margin:32px auto;flex:1 1 100%;grid-column:1/-1;align-self:stretch;box-sizing:border-box"></sb-widget>
-<script>
+    <!-- ▼ 방명록·OX 투표 (4차시) ▼ --><sb-widget id="sb-web" style="display:block;width:100%;max-width:640px;margin:32px auto;flex:1 1 100%;grid-column:1/-1;align-self:stretch;box-sizing:border-box"></sb-widget><script>
 (function () {
-  var C = {"id":"sb-web","url":"https://script.google.com/macros/s/AKfycbwU0alI3DKfsH3YrvOu9kn0LB01cfoPBUoC2XD7LOELXcEP3vN8aJ3hp2-w6wTtwOWd/exec","q":"모민재의 현 발로티어(불X 물멸)는 전부 버스 받았다","title":"방명록","sel":"body > main:nth-child(4) > section:nth-child(3)","pos":"before"};
+  var C = {"id":"sb-web","url":"https://script.google.com/macros/s/AKfycbwU0alI3DKfsH3YrvOu9kn0LB01cfoPBUoC2XD7LOELXcEP3vN8aJ3hp2-w6wTtwOWd/exec","q":"모민재의 현 발로티어(불X 물멸)는 전부 버스 받았다","title":"방명록","sel":"","pos":"before"};
   var host = document.getElementById(C.id);
   if (!host || host.sbReady) return;
   host.sbReady = true;
@@ -756,7 +631,227 @@
   }
 })();
 
-</script>
-<!-- ▲ 방명록·OX 투표 끝 ▲ -->
-</body>
-</html>
+</script><!-- ▲ 방명록·OX 투표 끝 ▲ --><section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-purple-500/30 space-y-6 text-center relative overflow-hidden">
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-widest text-indigo-400 font-semibold">Mini Quiz</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">모맨재에 관한 OX 퀴즈!</h2>
+      </div>
+
+      <div class="bg-purple-950/50 p-6 rounded-2xl border border-purple-800/40">
+        <p class="text-xl md:text-2xl font-semibold text-purple-200">
+          Q. "난 게이다" 🌈
+        </p>
+      </div>
+
+      <!-- OX 버튼 -->
+      <div class="flex justify-center gap-6">
+        <button onclick="checkAnswer(true)" class="w-32 py-4 bg-emerald-600/80 hover:bg-emerald-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-emerald-500/50 active:scale-95 border border-emerald-400/40">
+          O
+        </button>
+        <button onclick="checkAnswer(false)" class="w-32 py-4 bg-rose-600/80 hover:bg-rose-500 text-white font-extrabold text-3xl rounded-2xl transition-all shadow-lg hover:shadow-rose-500/50 active:scale-95 border border-rose-400/40">
+          X
+        </button>
+      </div>
+
+      <!-- 결과 메시지 상자 -->
+      <div id="quiz-result" class="hidden p-4 rounded-xl text-lg font-bold transition-all duration-300"></div>
+    </section>
+
+    <!-- 섹션 3: 오늘의 운세 -->
+    <section class="w-full glass-card p-6 md:p-8 rounded-3xl border border-pink-500/30 text-center space-y-6">
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-widest text-pink-400 font-semibold">Space Fortune</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">🔮 모맨재의 오늘의 운세</h2>
+        <p class="text-xs md:text-sm text-gray-300">버튼을 눌러 오늘 당신의 우주 운세를 점쳐보세요!</p>
+      </div>
+
+      <button onclick="drawFortune()" class="px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-400 hover:to-indigo-400 text-white font-bold text-lg rounded-full shadow-lg hover:shadow-pink-500/50 transition-all active:scale-95 border border-white/20">
+        ✨ 오늘의 운세 뽑기 ✨
+      </button>
+
+      <!-- 운세 결과 표시 공간 -->
+      <div id="fortune-display" class="min-h-[100px] flex items-center justify-center p-6 bg-black/40 rounded-2xl border border-purple-500/20 text-purple-200 text-lg font-medium leading-relaxed">
+        버튼을 눌러 운세를 확인해보세요!
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="text-xs text-gray-500 text-center pt-6">
+      © 모맨재 Universe. All Galactic Rights Reserved. 🚀
+    </footer>
+
+  </main>
+
+  <script>
+    /* ==========================================
+       1. 별빛 배경 애니메이션 (Canvas)
+    ========================================== */
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    let stars = [];
+    const numStars = 150;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initStars();
+    });
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.8,
+          alpha: Math.random(),
+          speed: Math.random() * 0.02 + 0.005,
+          color: ['#ffffff', '#e0e7ff', '#fbcfe8', '#c084fc'][Math.floor(Math.random() * 4)]
+        });
+      }
+    }
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach(star => {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) {
+          star.speed = -star.speed;
+        }
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = star.color;
+        ctx.globalAlpha = Math.abs(star.alpha);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animateStars);
+    }
+
+    resizeCanvas();
+    initStars();
+    animateStars();
+
+    /* ==========================================
+       2. 카드 뒤집기 함수
+    ========================================== */
+    function flipCard(cardElement) {
+      const flipper = cardElement.querySelector('.flipper');
+      flipper.classList.toggle('flipped');
+    }
+
+    /* ==========================================
+       3. OX 퀴즈 결과 및 효과
+    ========================================== */
+    function checkAnswer(userAnswer) {
+      const resultBox = document.getElementById('quiz-result');
+      const correctAnswer = true; // 정답은 O
+
+      resultBox.classList.remove('hidden', 'bg-emerald-950/80', 'text-emerald-200', 'border-emerald-500', 'bg-rose-950/80', 'text-rose-200', 'border-rose-500');
+
+      if (userAnswer === correctAnswer) {
+        // 정답 (O 선택) -> 축하 효과
+        resultBox.classList.add('bg-emerald-950/80', 'text-emerald-200', 'border', 'border-emerald-500');
+        resultBox.innerHTML = "🎉 정답입니다! 취향 존중! 진정한 모맨재 박사이시군요! 🎉";
+        triggerCelebration();
+      } else {
+        // 오답 (X 선택) -> 아쉬운 효과
+        resultBox.classList.add('bg-rose-950/80', 'text-rose-200', 'border', 'border-rose-500');
+        resultBox.innerHTML = "😭 땡! 틀렸습니다! 절 아직 잘 모르시는군요... 아쉽습니다!";
+        triggerDisappointment();
+      }
+    }
+
+    // 축하 효과 (반짝이는 축포 파티클)
+    function triggerCelebration() {
+      const container = document.getElementById('particles-container');
+      const colors = ['#f472b6', '#a855f7', '#38bdf8', '#4ade80', '#fbbf24'];
+
+      for (let i = 0; i < 60; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.left = '50%';
+        particle.style.top = '50%';
+        particle.style.width = Math.random() * 10 + 6 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 300 + 100;
+        const x = Math.cos(angle) * velocity;
+        const y = Math.sin(angle) * velocity;
+
+        container.appendChild(particle);
+
+        particle.animate([
+          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+          { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }
+        ], {
+          duration: Math.random() * 1000 + 800,
+          easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+        }).onfinish = () => particle.remove();
+      }
+    }
+
+    // 아쉬운 효과 (화면 좌우 흔들기)
+    function triggerDisappointment() {
+      const main = document.querySelector('main');
+      main.animate([
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-12px)' },
+        { transform: 'translateX(12px)' },
+        { transform: 'translateX(-8px)' },
+        { transform: 'translateX(8px)' },
+        { transform: 'translateX(0)' }
+      ], {
+        duration: 400,
+        easing: 'ease-in-out'
+      });
+    }
+
+    /* ==========================================
+       4. 오늘의 운세 (11개 메시지)
+    ========================================== */
+    const fortunes = [
+      "🌟 [대길] 오늘은 운명의 덕질 대상을 만나게 될 운세! 입덕 준비를 하세요.",
+      "🪐 [중길] 혜성이 지나가며 뜻밖의 행운을 주고 갑니다. 치킨 먹기 딱 좋은 날!",
+      "🛸 [소길] 외계인이 당신의 존재를 알아챘습니다. 오늘은 유난히 빛나는 하루!",
+      "🌌 [길] 은하수의 기운이 당신을 감싸 안습니다. 하고 싶었던 일을 질러보세요!",
+      "💫 [초대박] 오늘 가챠 뽑기를 하면 SSR이 터질 환상의 기운이 흐릅니다!",
+      "☄️ [주의] 별똥별이 떨어지며 깜빡한 과제/업무를 떠올려줄 수도 있으니 체크 필수!",
+      "🌙 [평온] 달빛이 은은하게 감싸는 날. 맛있는 가공식품과 함께 휴식을 취하세요.",
+      "☀️ [대폭발] 우주 빅뱅 급의 텐션이 솟구칩니다! 오늘 하루는 내가 주인공!",
+      "🔮 [신비] 좋아하는 음악을 들으면 우주 에너지 지수가 +100 상승합니다.",
+      "⭐ [소소] 길을 걷다 귀여운 길냥이를 만나 우주 평화를 느낄 확률 99%!",
+      "🚀 [대박] 당신의 추진력이 광속에 도달합니다! 망설이던 일이 있다면 바로 도전!"
+    ];
+
+    function drawFortune() {
+      const display = document.getElementById('fortune-display');
+      
+      // 뽑는 느낌을 주는 텍스트 전환 효과
+      display.innerHTML = "<span class='animate-pulse text-pink-400'>🔮 우주 궤도를 계산하여 운세를 뽑는 중...</span>";
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * fortunes.length);
+        display.innerHTML = fortunes[randomIndex];
+        display.animate([
+          { transform: 'scale(0.95)', opacity: 0.5 },
+          { transform: 'scale(1)', opacity: 1 }
+        ], {
+          duration: 300,
+          easing: 'ease-out'
+        });
+      }, 400);
+    }
+  </script>
+</body></html>
